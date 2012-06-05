@@ -8,7 +8,9 @@ module LocalAvatarsPlugin
       base.class_eval do      
         unloadable
         acts_as_attachable
+        has_many :memberships, :class_name => 'Member', :foreign_key => 'user_id', :include => [ :project, :roles ], :conditions => "#{Project.table_name}.status=#{Project::STATUS_ACTIVE}", :order => "#{Project.table_name}.name"
         has_many :memberships, :class_name => 'Member'
+        has_many :projects, :through => :memberships
         has_many :attachments, { :as => :container,
                                  :order => "#{Attachment.table_name}.created_on",
                                  :dependent => :destroy}
