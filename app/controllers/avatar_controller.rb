@@ -1,7 +1,7 @@
 require 'redmine'
 require_dependency 'account_controller' 
 
-class AccountController < ApplicationController
+class AvatarController < ApplicationController
   helper :attachments
   include AttachmentsHelper 
   def get_avatar
