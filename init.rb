@@ -1,5 +1,7 @@
 require 'redmine'
-require 'users_helper_avatar_patch'
+# TODO: Admin -> Users -> Avatar tab is disabled.
+#       Please enable to uncomment this line. 
+#require 'users_helper_avatar_patch'
 require 'users_avatar_patch'
 require 'application_helper_avatar_patch'
 require 'my_account_hook'
